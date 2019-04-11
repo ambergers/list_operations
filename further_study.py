@@ -62,13 +62,6 @@ def custom_append(input_list, value):
     """
     input_list[custom_len(input_list):] = [value]
 
-    '''
-    new_list = list(range(len(input_list)+1))
-    new_list[-1] = value
-    new_list[:-1] = input_list[:]
-    input_list = new_list[:]
-    '''
-
 
 def custom_extend(input_list, second_list):
     """Append every item in second_list to input_list.
@@ -104,8 +97,15 @@ def custom_insert(input_list, index, value):
 
     """
 
-    pass
+    #secondpart = input_list[index:]
+    #input_list = firstpart + value + secondpart
+    #input_list[index:index+custom_len(value)] = value[:]
+    #input_list[index+custom_len(value):] = secondpart[:]
 
+
+    input_list[index+custom_len([value]):] = input_list[index:]
+    input_list[index:index+custom_len([value])] = [value]
+    #input_list[custom_len(input_list):] = [value]
 
 def custom_remove(input_list, value):
     """Remove the first item of the value in list.

@@ -30,8 +30,10 @@ def custom_len(input_list):
         8
 
     """
-
-    return 0
+    cnt = 0
+    for item in input_list:
+        cnt += 1
+    return cnt
 
 
 # For the next four exercises, you'll need to be clever and think about ways

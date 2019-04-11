@@ -60,9 +60,15 @@ def custom_append(input_list, value):
         True
 
     """
-    new_list = list(range(custom_len(input_list)+1))
-    #loop through new_list, assign input_list values until last index
-    #of input list, then assign value to that index (-1)
+    input_list[custom_len(input_list):] = [value]
+
+    '''
+    new_list = list(range(len(input_list)+1))
+    new_list[-1] = value
+    new_list[:-1] = input_list[:]
+    input_list = new_list[:]
+    '''
+
 
 def custom_extend(input_list, second_list):
     """Append every item in second_list to input_list.
@@ -80,7 +86,7 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    input_list[custom_len(input_list) + custom_len(second_list):] = second_list
 
 
 def custom_insert(input_list, index, value):

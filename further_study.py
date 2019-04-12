@@ -175,8 +175,11 @@ def custom_count(input_list, value):
         2
 
     """
-
-    return 0
+    cnt = 0
+    for item in input_list:
+        if item == value:
+            cnt += 1
+    return cnt
 
 
 def custom_reverse(input_list):
@@ -194,8 +197,7 @@ def custom_reverse(input_list):
         True
 
     """
-
-    pass
+    input_list[:] = input_list[::-1]
 
 
 def custom_contains(input_list, value):
@@ -215,7 +217,10 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+    return False
 
 
 def custom_equality(some_list, another_list):

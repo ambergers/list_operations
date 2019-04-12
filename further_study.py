@@ -97,15 +97,9 @@ def custom_insert(input_list, index, value):
 
     """
 
-    #secondpart = input_list[index:]
-    #input_list = firstpart + value + secondpart
-    #input_list[index:index+custom_len(value)] = value[:]
-    #input_list[index+custom_len(value):] = secondpart[:]
-
-
     input_list[index+custom_len([value]):] = input_list[index:]
     input_list[index:index+custom_len([value])] = [value]
-    #input_list[custom_len(input_list):] = [value]
+
 
 def custom_remove(input_list, value):
     """Remove the first item of the value in list.
@@ -122,8 +116,12 @@ def custom_remove(input_list, value):
         True
 
     """
-
-    pass
+    idx = 0
+    for item in input_list:
+        if item == value:
+            del input_list[idx]
+            break
+        idx += 1
 
 
 def custom_pop(input_list):

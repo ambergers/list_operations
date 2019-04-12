@@ -156,8 +156,11 @@ def custom_index(input_list, value):
         1
 
     """
-
-    return 0
+    idx = 0
+    for item in input_list:
+        if item == value:
+            return idx
+        idx += 1
 
 
 def custom_count(input_list, value):

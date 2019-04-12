@@ -238,8 +238,12 @@ def custom_equality(some_list, another_list):
         False
 
     """
-
-    return None
+    index = 0
+    for item in some_list:
+        if item != another_list[index]:
+            return False
+        index += 1
+    return True
 
 
 ##############################################################################
